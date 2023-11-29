@@ -1,15 +1,3 @@
-
-#list = [5,3,7,2,8]
-
-#n = len(list)
-#for i in range(n-1):
-    #for j in range(i+1,n):
-       # if list[j] < list[i]:
-            #temp = list[i]
-           # list[i] = list[j]
-          #  list[j] = temp
-#print(list)
-
 t = int(input("plese enter the number: "))
 n = int(input("enter number of element: "))
 m = []
