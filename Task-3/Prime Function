@@ -1,0 +1,23 @@
+import math
+
+def is_prime(N):
+    if N <= 1:
+        return False
+    if N == 2:
+        return True
+    if N % 2 == 0:
+        return False
+
+    sqrt_N = int(math.sqrt(N))
+    for i in range(3, sqrt_N+1, 2):
+        if N % i == 0:
+            return False
+    return True
+
+T = int(input())
+for _ in range(T):
+    N = int(input())
+    if is_prime(N):
+        print("YES")
+    else:
+        print("NO")

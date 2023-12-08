@@ -1,0 +1,6 @@
+def print_numbers(N):
+    numbers = list(range(1, N+1))
+    print(*numbers, sep=' ')
+
+N = int(input())
+print_numbers(N)

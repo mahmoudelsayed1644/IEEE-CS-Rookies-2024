@@ -1,0 +1,5 @@
+x,n = list(map(int,input().split()))
+sum_ = 0
+for i in range(2,n+1,2):
+        sum_ += x**i
+print(sum_)

@@ -1,0 +1,7 @@
+n,x = list(map(int,input().split()))
+y = list(map(int,input().split()))
+times = x % len(y)
+new_index = (y.index(n) + times) % len(y)
+y.remove(n)
+y.insert(new_index,n)
+print(*y)

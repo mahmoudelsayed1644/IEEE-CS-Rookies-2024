@@ -1,0 +1,11 @@
+
+n,x,y = list(map(int,input().split()))
+x -=1
+y -=1
+z = []
+while n>0:
+    z.append(list(map(int,input().split())))
+    n -=1
+z[x],z[y] = z[y],z[x]
+for i in range(len(z)):
+    print(*z[i])
