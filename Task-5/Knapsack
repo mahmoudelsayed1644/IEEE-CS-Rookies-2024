@@ -1,0 +1,29 @@
+def knapsack(items, weights, values, capacity, n):
+    if capacity == 0 or n == 0:
+        return 0
+
+    if weights[n-1] > capacity:
+        return knapsack(items, weights, values, capacity, n-1)
+
+    else:
+        included = values[n-1] + knapsack(items, weights, values, capacity - weights[n-1], n-1)
+        excluded = knapsack(items, weights, values, capacity, n-1)
+        return max(included, excluded)
+
+
+N, W = map(int, input().split())
+
+
+weights = []
+values = []
+
+
+for _ in range(N):
+    w, v = map(int, input().split())
+    weights.append(w)
+    values.append(v)
+
+
+max_value = knapsack([], weights, values, W, N)
+
+print(max_value)

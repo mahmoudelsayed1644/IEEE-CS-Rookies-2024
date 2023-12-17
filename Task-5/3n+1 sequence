@@ -1,0 +1,13 @@
+def Length(n):
+    if n == 1:
+        return 1
+    elif n % 2 == 0:
+        return 1 + Length(n // 2)
+    else:
+        return 1 + Length(3 * n + 1)
+
+n = int(input())
+
+length = Length(n)
+
+print(length)

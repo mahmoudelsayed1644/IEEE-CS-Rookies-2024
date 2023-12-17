@@ -1,0 +1,13 @@
+def arrayAverage(arr, n):
+    if n == 0:
+        return 0
+    else:
+        return (arr[n - 1] + arrayAverage(arr, n - 1) * (n - 1)) / n
+
+N = int(input())
+
+A = list(map(int, input().split()))
+
+average = arrayAverage(A, N)
+
+print("{:.6f}".format(average))

@@ -1,0 +1,17 @@
+def ReachValue(currentValue, targetValue):
+    if currentValue == targetValue:
+        return True
+    elif currentValue > targetValue:
+        return False
+    else:
+        return ReachValue(currentValue * 10, targetValue) or ReachValue(currentValue * 20, targetValue)
+
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    
+    if ReachValue(1, N):
+        print("YES")
+    else:
+        print("NO")

@@ -1,0 +1,29 @@
+def maximumPathSum(matrix, i, j, N, M):
+    if i == N - 1 and j == M - 1:
+        return matrix[i][j]
+    
+    if i < N - 1 and j < M - 1:
+        down = maximumPathSum(matrix, i + 1, j, N, M)
+        right = maximumPathSum(matrix, i, j + 1, N, M)
+        return matrix[i][j] + max(down, right)
+    
+    elif i < N - 1:
+        return matrix[i][j] + maximumPathSum(matrix, i + 1, j, N, M)
+    
+    elif j < M - 1:
+        return matrix[i][j] + maximumPathSum(matrix, i, j + 1, N, M)
+
+
+N, M = map(int, input().split())
+
+matrix = []
+
+
+for i in range(N):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+
+max_sum = maximumPathSum(matrix, 0, 0, N, M)
+
+print(max_sum)
