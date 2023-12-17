@@ -1,0 +1,10 @@
+def calculate_element(A, B, C):
+    sequence = [A, B]
+    for i in range(2, C):
+        next_element = sequence[-1] ^ sequence[-2]
+        sequence.append(next_element)
+    return sequence[C - 1]
+
+A, B, C = map(int, input().split())
+result = calculate_element(A, B, C)
+print(result)

@@ -1,0 +1,27 @@
+def multiply_matrices(A, B):
+    RA, CA = len(A), len(A[0])
+    RB, CB = len(B), len(B[0])
+
+
+    result = [[0] * CB for _ in range(RA)]
+
+
+    for i in range(RA):
+        for j in range(CB):
+            for k in range(CA):
+                result[i][j] += A[i][k] * B[k][j]
+
+    return result
+
+
+RA, CA = map(int, input().split())
+A = [list(map(int, input().split())) for _ in range(RA)]
+
+RB, CB = map(int, input().split())
+B = [list(map(int, input().split())) for _ in range(RB)]
+
+result = multiply_matrices(A, B)
+
+
+for row in result:
+    print(*row)

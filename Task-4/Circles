@@ -1,0 +1,21 @@
+import math
+
+def calculate_distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+def check_circle_intersection(x1, y1, x2, y2, x3, y3, x4, y4):
+    distance = calculate_distance(x1, y1, x3, y3)
+    
+    radius_sum = calculate_distance(x1, y1, x2, y2) / 2 + calculate_distance(x3, y3, x4, y4) / 2
+    
+    if distance < radius_sum:
+        return "YES"
+    else:
+        return "NO"
+
+x1, y1, x2, y2 = map(int, input().split())
+x3, y3, x4, y4 = map(int, input().split())
+
+result = check_circle_intersection(x1, y1, x2, y2, x3, y3, x4, y4)
+
+print(result)

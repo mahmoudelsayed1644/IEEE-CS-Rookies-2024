@@ -1,0 +1,23 @@
+def base_conversion(A, B, C):
+    if A == 1:
+        
+        decimal_value = int(B, C)
+        return decimal_value
+    elif A == 2:
+        
+        decimal_number = int(B)
+        base_C_value = ""
+        while decimal_number > 0:
+            remainder = decimal_number % C
+            if remainder < 10:
+                base_C_value += str(remainder)
+            else:
+                base_C_value += chr(ord('A') + remainder - 10)
+            decimal_number //= C
+        return base_C_value[::-1]  
+
+
+A = int(input())
+B, C = input().split()
+result = base_conversion(A, B, int(C))
+print(result)
